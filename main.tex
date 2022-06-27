@@ -1,0 +1,85 @@
+\documentclass{worksheetclass}
+
+\usepackage{import}
+\import{}{custom_macros.tex}
+
+\title{Calabi-Yau Compactification}
+
+% DOCUMENT -----------------------------
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Calabi-Yau manifolds, orbifolds and crepant resolutions}\label{sec:CY}
+
+    \subsection{Kähler, Calabi-Yau structure and moduli spaces}
+
+        The Kähler form $\omega$ is a representative of a Doleault cohomology class
+        \begin{equation}
+            [\omega]\in H^{1,1}(X)
+        \end{equation}
+        and $[\omega]$ is called the \emph{Hähler class} of $\omega$.
+        \begin{theorem}[Calabi-Yau]
+            Given $X$ a compact manifold with trivial canonical bundle, and given a Kähler form $\tilde{\omega}$ on $X$, there exist a unique Ricci-flat metric in the Kähler class of $\tilde{\omega}$. That is, a unique Ricci-flat metric defined for some $\omega\in[\tilde{\omega}]$.
+        \end{theorem}
+        On the other hand, it is easy to show that Ricci-flatness implies triviality of the canonical bundle. For non-compact manifolds, the theorem does not hold strictly speaking, one must specify boundary conditions at infinity to find a Ricci-flat metric.
+
+        Given a Calabi-Yau anifold, we see that there are continuous famillies of Ricci-flat metrics, one for each cohomology class of $H^{1,1}(X)$. One can decompose any chomology class on a basis $[\omega]^i$ of the vactor space $H^{1,1}(X)$
+        \begin{equation}
+            [\omega]=\sum^{h^{1,1}}_{i=1}\lambda_i[\omega]^i.
+        \end{equation}
+        It is called the \emph{Kähler moduli space} of $X$ and its dimension is denoed by $h^{1,1}$.
+
+    \subsection{Calabi-Yau manifolds}
+
+        A \emph{Calabi-Yau manifold} of (complex) dimension $n$ is a compact $n$-dimensional Kähler manifold $M$ satisfying one of the following equivalent conditions:
+        \begin{itemize}
+            \item the canonical bundle of $M$ is trivial,
+            \item $M$ has holomorphic $n$-form that vanishes nowhere,
+            \item the structure group of the tangent bundle of $M$ can be reduced from $\U(n)$ to $\SU(n)$,
+            \item $M$ has Kähler metric with global holonomy contained in $\SU(n)$.
+        \end{itemize}
+
+        It was conjectured by Calabi then prooved by Yau that such spaces are necessarily Ricci-flat. In particular, since the first Chern class of CY manifolds si given by
+        \begin{equation}
+            c_1=\frac{1}{2\pi}[\mathcal{R}]
+        \end{equation}
+        it implies that $c_1$ vanishes, the converse is not true.
+
+        For a compact $n$-dimensioanl Kähler manifold the following conditions are equivalent to each other:
+        \begin{itemize}
+            \item the first real Chern class vanishes,
+            \item $M$ has a Kähler metric with vanishing Ricci curvature,
+            \item $M$ has Kähler metric with local holonomy contained in $\SU(n)$.
+            \item a positive power of the canonical bundle of $M$ is trivial,
+            \item $M$ has a finite cover that has trivial canonical bundle,
+            \item $M$ has a finite cover that is a product of a torus and a simply connected manifold with trivial canonical bundle.
+        \end{itemize}
+        They are weaker than the conditions above except when the Kähler manifold is simply connected in which case they are equivalent.
+
+    \subsection{Calabi-Yau orbifolds}
+
+        A \emph{Calabi-Yau orbifold} is the quotient of a smooth Calabi-Yau manifold by a discrete group action which generically has fixed points. From a algebraic geometry perspective we can try to resolve the orbifold singularity. A resolution $(X,\pi)$ of $\C^n/\Gamma$ is a non-singular complex manifold $X$ of dimension $n$ with a proper biholomorphic map 
+        \begin{equation}
+            \pi:X\to\C^n/\Gamma
+        \end{equation}
+        that induces a biholomorphism between dense open sets. A resolution $(X,\pi)$ of $\C^n/\Gamma$ is called a \emph{crepant resolution}\index{resolution!crepant}\footnote{For a resolution of singularities we can define a notion of discrepancy. A crepant resolution is a resolution
+            without discrepancy.} if the canonical bundles of $X$ and $\C^n/\Gamma$ are isomorphic, i.e.
+            \begin{equation*}
+                K_X\cong\pi^*(K_{\C^n/\Gamma}).
+            \end{equation*}
+        Since Calabi-Yau manifolds have trivial canonical bundle, to obtain a Calabi-Yau structure on $X$ one must choose a crepant resolutions of singularities.
+
+        It turns out that the amount of information we know about a crepant resolution of singularities of $\C^n/\Gamma$ depends dramatically on the dimension $n$ of the orbifold:
+        \begin{itemize}
+            \item $n=2$: a crepant always exists and is unique. Its topology is entirely described in terms of the finite group $\Gamma$ (via the McKay correspondence).
+            \item $n=3$: a crepant resolution always exists but it is not unique; they are related by flops. However all the crepant resolutions have the same Euler and Betti numbers: the \emph{stringy} Betti and Hodge numbers of the orbifold.
+            \item $n\geq4$: very little is known; crepant resolution ecists in rather special cases. Many singularity are terminal, which implies that they admit no crepant resolution.
+        \end{itemize}
+
+\printbibliography
+
+\end{document}
